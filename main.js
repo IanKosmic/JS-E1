@@ -1,6 +1,9 @@
-//Ejercicio 1
-//Se agregó .toLowerCase() para convertir el input del prompt a un string con minúsculas, 
+//Se agregó .toLowerCase()para convertir el input del prompt a un string con minúsculas, 
 //y así podamos hacer la comparación en la condición IF, de forma más sencilla.
+//También se agregó parseInt antes de prompt para convertir a entero la entrada ingresada a
+//la variable asignada a parse int.
+
+//Ejercicio 1: Verificar belleza
 function verificarBelleza() {
     let belleza = prompt('¿Eres bellisimo/a?');
     if (belleza.toLowerCase() == 'sí' || belleza.toLowerCase() == 'si') {
@@ -12,9 +15,9 @@ function verificarBelleza() {
 
 verificarBelleza();
 
-//Ejercicio 2
+//Ejercicio 2: Verificar si el número es divisible entre 2
 function esDivisibleEntreDos() {
-    let numero = prompt('Ingresa un número:');
+    let numero = parseInt(prompt('Ingresa un número:'));
     if (numero % 2 == 0) {
         alert(numero + ' es divisible entre 2');
     } else {
@@ -24,10 +27,9 @@ function esDivisibleEntreDos() {
 
 esDivisibleEntreDos();
 
-
-//Ejercicio 3
+//Ejercicio 3: Verificar si el número es par
 function esNumeroPar() {
-    let numeroPar = prompt('Ingresa un número:');
+    let numeroPar = parseInt(prompt('Ingresa un número:'));
     if (numeroPar % 2 == 0) {
         alert(numeroPar + ' es un número par');
     } else {
@@ -37,10 +39,9 @@ function esNumeroPar() {
 
 esNumeroPar();
 
-
-//Ejercicio 4
+//Ejercicio 4: Verificar número de cliente
 function verificarNumeroCliente() {
-    let numeroCliente = prompt('Ingresa tu número de cliente:');
+    let numeroCliente = parseInt(prompt('Ingresa tu número de cliente:'));
     if (numeroCliente == 1000) {
         alert('¡Ganaste un premio!');
     } else {
@@ -50,11 +51,10 @@ function verificarNumeroCliente() {
 
 verificarNumeroCliente();
 
-
-//Ejercicio 5
+//Ejercicio 5: Comparar dos números
 function compararDosNumeros() {
-    let numero1 = prompt('Ingresa el primer número:');
-    let numero2 = prompt('Ingresa el segundo número:');
+    let numero1 = parseInt(prompt('Ingresa el primer número:'));
+    let numero2 = parseInt(prompt('Ingresa el segundo número:'));
     if (numero1 < numero2) {
         alert('El número menor es: ' + numero1);
     } else if (numero2 < numero1) {
@@ -64,12 +64,11 @@ function compararDosNumeros() {
 
 compararDosNumeros();
 
-
-//Ejercicio 6
+//Ejercicio 6: Mostrar el número mayor de tres
 function numeroMayorDeTres() {
-    let num1 = prompt('Ingresa el primer número:');
-    let num2 = prompt('Ingresa el segundo número:');
-    let num3 = prompt('Ingresa el tercer número:');
+    let num1 = parseInt(prompt('Ingresa el primer número:'));
+    let num2 = parseInt(prompt('Ingresa el segundo número:'));
+    let num3 = parseInt(prompt('Ingresa el tercer número:'));
     if (num1 >= num2 && num1 >= num3) {
         alert('El número mayor es: ' + num1);
     } else if (num2 >= num1 && num2 >= num3) {
@@ -81,8 +80,7 @@ function numeroMayorDeTres() {
 
 numeroMayorDeTres();
 
-
-//Ejercicio 7
+//Ejercicio 7: Imprimir mensaje según el día de la semana
 function diaDeLaSemana() {
     let diaSemana = prompt('Ingresa un día de la semana:').toLowerCase();
     if (diaSemana == 'lunes') {
@@ -98,10 +96,9 @@ function diaDeLaSemana() {
 
 diaDeLaSemana();
 
-
-//Ejercicio 8
+//Ejercicio 8: Verificar calificación
 function verificarCalificacion() {
-    let calificacion = prompt('Ingresa tu calificación (entre 1 y 10):');
+    let calificacion = parseInt(prompt('Ingresa tu calificación (entre 1 y 10):'));
     if (calificacion >= 1 && calificacion <= 10) {
         if (calificacion < 6) {
             alert('Reprobado');
@@ -119,101 +116,103 @@ function verificarCalificacion() {
 
 verificarCalificacion();
 
+//Ejercicio 9: Calcular precio de helado con toppings
+function calcularPrecioHelado() {
+    alert('- Menú de helados -');
+    alert('Los precios son los siguientes:');
+    alert('Helado sin topping = $50.00 MXN');
+    alert('Topping de OREO + $10.00 MXN');
+    alert('Topping de KitKat + $15.00 MXN');
+    alert('Topping de Brownie + $20.00 MXN');
 
-//Ejercicio 9
-alert('- Menú de helados -');
-alert('Los precios son los siguientes:');
-alert('Helado sin topping = $50.00 MXN');
-alert('Topping de OREO + $10.00 MXN')
-alert('Topping de KitKat + $15.00 MXN')
-alert('Topping de Brownie + $20.00 MXN');
+    let topping = prompt('Elige el sabor del topping que gustes (Oreo, KitKat, Brownie)').toLowerCase();
+    let precioHelado = 50;
+    let precioTotal;
 
-let topping = prompt('Elige el sabor del topping que gustes (Oreo, KitKat, Brownie)');
-
-function saborDeHelado(helado, oreo) {
-    return (helado + oreo);
-}
-function saborDeHeladoKit(helado, kitkat) {
-    return (helado + kitkat);
-}
-function saborDeHeladoBro(helado, brownie) {
-    return (helado + brownie);
-}
-
-if (topping == 'oreo' || topping == 'OREO' || topping == 'Oreo') {
-    let helado = 50;
-    let oreo = 10;
-    alert('El total de tu helado es de: $' + saborDeHelado(helado, oreo));
-} if (topping == 'kitkat' || topping == 'KitKat' || topping == 'KITKAT') {
-    let helado = 50;
-    let kitkat = 15;
-    alert('El total de tu helado es de: $' + saborDeHelado(helado, kitkat));
-} if (topping == 'brownie' || topping == 'Brownie' || topping == 'BROWNIE') {
-    let helado = 50;
-    let brownie = 20;
-    alert('El total de tu helado es de: $' + saborDeHeladoBro(helado, brownie));
-} else {
-    alert('La opción seleccionada no es válida, intenta de nuevo.');
+    if (topping == 'oreo') {
+        precioTotal = precioHelado + 10;
+        alert('El total de tu helado es de: $' + precioTotal + ' MXN');
+    } else if (topping == 'kitkat') {
+        precioTotal = precioHelado + 15;
+        alert('El total de tu helado es de: $' + precioTotal + ' MXN');
+    } else if (topping == 'brownie') {
+        precioTotal = precioHelado + 20;
+        alert('El total de tu helado es de: $' + precioTotal + ' MXN');
+    } else {
+        alert('No tenemos este topping, lo sentimos. El precio del helado sin topping es de $' + precioHelado + ' MXN');
+    }
 }
 
-//Ejercicio 10
-alert('Programas educativos:');
-alert('Course: $4999 MXN');
-alert('Carrera: $3999 MXN');
-alert('Master: $2999 MXN');
+calcularPrecioHelado();
 
-let programa = prompt('Elige un programa (Course, Carrera, Master):');
-let precioMensual;
-let duracion;
+//Ejercicio 10: Calcular costo de programas educativos
+function calcularCostoPrograma() {
+    alert('Programas educativos:');
+    alert('Course: $4999 MXN');
+    alert('Carrera: $3999 MXN');
+    alert('Master: $2999 MXN');
 
-if (programa.toLowerCase() == 'course') {
-    precioMensual = 4999;
-    duracion = 2;
-} else if (programa.toLowerCase() == 'carrera') {
-    precioMensual = 3999;
-    duracion = 6;
-} else if (programa.toLowerCase() == 'master') {
-    precioMensual = 2999;
-    duracion = 12;
-} else {
-    alert('Programa no válido.');
+    let programa = prompt('Elige un programa (Course, Carrera, Master):').toLowerCase();
+    let precioMensual;
+    let duracion;
+
+    if (programa == 'course') {
+        precioMensual = 4999;
+        duracion = 2;
+    } else if (programa == 'carrera') {
+        precioMensual = 3999;
+        duracion = 6;
+    } else if (programa == 'master') {
+        precioMensual = 2999;
+        duracion = 12;
+    } else {
+        alert('Programa no válido.');
+        return; // Salir de la función si el programa no es válido
+    }
+
+    let beca = prompt('¿Tienes alguna beca? (Facebook, Google, Jesua):').toLowerCase();
+    let descuento = 0;
+
+    if (beca == 'facebook') {
+        descuento = 0.20;
+    } else if (beca == 'google') {
+        descuento = 0.15;
+    } else if (beca == 'jesua') {
+        descuento = 0.50;
+    }
+
+    let precioFinalMensual = precioMensual * (1 - descuento);
+    let precioTotal = precioFinalMensual * duracion;
+
+    alert('El precio mensual con descuento es: $' + precioFinalMensual.toFixed(2) + ' MXN');
+    alert('El precio total por el programa es: $' + precioTotal.toFixed(2) + ' MXN');
 }
 
-let beca = prompt('¿Tienes alguna beca? (Facebook, Google, Jesua):');
-let descuento = 0;
+calcularCostoPrograma();
 
-if (beca.toLowerCase() == 'facebook') {
-    descuento = 0.20;
-} else if (beca.toLowerCase() == 'google') {
-    descuento = 0.15;
-} else if (beca.toLowerCase() == 'jesua') {
-    descuento = 0.50;
+//Ejercicio 11: Calcular costo de viaje según distancia y tipo de vehículo
+function calcularCostoViaje() {
+    let tipoVehiculo = prompt('Ingresa el tipo de vehículo (coche, moto, autobús):').toLowerCase();
+    let kmsRecorridos = parseFloat(prompt('Ingresa la distancia recorrida en kilómetros:'));
+    let litrosConsumidos = parseFloat(prompt('Ingresa los litros de combustible consumidos:'));
+    let precioKilometro;
+
+    if (tipoVehiculo == 'coche') {
+        precioKilometro = 0.20;
+    } else if (tipoVehiculo == 'moto') {
+        precioKilometro = 0.10;
+    } else if (tipoVehiculo == 'autobús') {
+        precioKilometro = 0.50;
+    } else {
+        alert('Tipo de vehículo no válido.');
+        return; // Salir de la función si el tipo de vehículo no es válido
+    }
+
+    let costoRecorrido = precioKilometro * kmsRecorridos;
+    let extraLitros = (litrosConsumidos <= 100) ? 5 : 10;
+    let totalAPagar = costoRecorrido + extraLitros;
+
+    alert('El total a pagar es: $' + totalAPagar.toFixed(2) + ' MXN');
 }
 
-let precioFinalMensual = precioMensual * (1 - descuento);
-let precioTotal = precioFinalMensual * duracion;
-
-alert('El precio mensual con descuento es: $' + precioFinalMensual + ' MXN');
-alert('El precio total por el programa es: $' + precioTotal + ' MXN');
-
-//Ejercicio 11
-let tipoVehiculo = prompt('Ingresa el tipo de vehículo (coche, moto, autobús):').toLowerCase();
-let kmsRecorridos = parseInt(prompt('Ingresa la distancia recorrida en kilómetros:'));
-let litrosConsumidos = parseInt(prompt('Ingresa los litros de combustible consumidos:'));
-let precioKilometro;
-
-if (tipoVehiculo == 'coche') {
-    precioKilometro = 0.20;
-} else if (tipoVehiculo == 'moto') {
-    precioKilometro = 0.10;
-} else if (tipoVehiculo == 'autobús') {
-    precioKilometro = 0.50;
-} else {
-    alert('Tipo de vehículo no válido.');
-}
-
-let costoRecorrido = precioKilometro * kmsRecorridos;
-let extraLitros = (litrosConsumidos <= 100) ? 5 : 10;
-let totalAPagar = costoRecorrido + extraLitros;
-
-alert('El total a pagar es: $' + totalAPagar.toFixed(2) + ' MXN');
+calcularCostoViaje();
