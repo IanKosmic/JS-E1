@@ -167,7 +167,6 @@ function calcularCostoPrograma() {
         duracion = 12;
     } else {
         alert('Programa no válido.');
-        return; // Salir de la función si el programa no es válido
     }
 
     let beca = prompt('¿Tienes alguna beca? (Facebook, Google, Jesua):').toLowerCase();
@@ -184,8 +183,8 @@ function calcularCostoPrograma() {
     let precioFinalMensual = precioMensual * (1 - descuento);
     let precioTotal = precioFinalMensual * duracion;
 
-    alert('El precio mensual con descuento es: $' + precioFinalMensual.toFixed(2) + ' MXN');
-    alert('El precio total por el programa es: $' + precioTotal.toFixed(2) + ' MXN');
+    alert('El precio mensual con descuento es: $' + precioFinalMensual + ' MXN');
+    alert('El precio total por el programa es: $' + precioTotal + ' MXN');
 }
 
 calcularCostoPrograma();
@@ -205,14 +204,13 @@ function calcularCostoViaje() {
         precioKilometro = 0.50;
     } else {
         alert('Tipo de vehículo no válido.');
-        return; // Salir de la función si el tipo de vehículo no es válido
     }
 
     let costoRecorrido = precioKilometro * kmsRecorridos;
     let extraLitros = (litrosConsumidos <= 100) ? 5 : 10;
     let totalAPagar = costoRecorrido + extraLitros;
 
-    alert('El total a pagar es: $' + totalAPagar.toFixed(2) + ' MXN');
+    alert('El total a pagar es: $' + totalAPagar + ' MXN');
 }
 
 calcularCostoViaje();
